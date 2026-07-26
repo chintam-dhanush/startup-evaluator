@@ -9,7 +9,7 @@ function App() {
           <div className="page-header-brand">
             <div className="page-header-brand-icon">⚡</div>
             <div>
-              <h1>Vanguard</h1>
+              <h1>StartWise</h1>
               <span>AI Startup Evaluator</span>
             </div>
           </div>
@@ -22,7 +22,7 @@ function App() {
       </main>
 
       <footer className="page-footer">
-        © 2025 Vanguard — AI Startup Evaluator · Built with FastAPI, React & Groq LLM
+        © 2025 StartWise — AI Startup Evaluator · Built with FastAPI, React & Groq LLM
       </footer>
     </div>
   );
