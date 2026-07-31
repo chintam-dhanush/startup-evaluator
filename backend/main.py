@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from services.llm.groq_service import LLMResponseParsingError
 import groq
 import logging
+from rag.setup import ensure_database
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -93,5 +94,6 @@ class StartupInput(BaseModel):
 
 @app.post("/evaluate")
 def evaluate(data: StartupInput):
+    ensure_database()
     report = evaluate_startup(data.dict())
     return report

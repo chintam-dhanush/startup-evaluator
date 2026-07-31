@@ -13,6 +13,13 @@ def retrieve_schemes(query, top_k=3):
         n_results=top_k
     )
 
+    if (
+    not results.get("documents")
+    or not results["documents"]
+    or not results["documents"][0]
+    ):
+        return []
+
     schemes = []
 
     documents = results["documents"][0]
@@ -31,5 +38,7 @@ def retrieve_schemes(query, top_k=3):
             "sector": meta.get("sector", "").split(",") if meta.get("sector") else [],
             "stage": meta.get("stage", "").split(",") if meta.get("stage") else []
         })
+
+    print(f"Retrieved {len(schemes)} government schemes.")
 
     return schemes
